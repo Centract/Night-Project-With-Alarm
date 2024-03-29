@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="FullScreenDialogStyle">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="TextSize6sp">
+        <item name="android:textSize">6sp</item>
+    </style>
+
+    <style name="Theme.App" parent="Base.Theme.App" />
+
+    <style name="roundedDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">16dp</item>
+    </style>
+</resources>

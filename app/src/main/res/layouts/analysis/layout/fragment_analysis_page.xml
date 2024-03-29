@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable name="theme" type="night.app.data.Theme" />
+</data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{theme.primary, default=`#212529`}"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="34dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_anal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                app:tabRippleColor="@{theme.onPrimaryVariant}"
+                android:selectedTabIndicatorColor="@{theme.onPrimary}"
+                tools:tabIndicatorColor="#fff"
+                tools:tabRippleColor="#757a7f"
+                tools:tabSelectedTextColor="#fff"
+                tools:tabTextColor="#757a7f">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Day" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Week" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Month" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_left"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="10dp"
+                    android:rotation="180"
+                    android:tint="#EFECEC"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_anal_date"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_chevron_right" />
+
+                <ImageView
+                    android:id="@+id/iv_right"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="10dp"
+                    android:tint="#EFECEC"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_anal_date"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_chevron_right" />
+
+                <TextView
+                    android:id="@+id/tv_anal_date"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColor="@{theme.onPrimary, default=`#fff`}"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="15 Nov 2023" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/view_rect_r10"
+                android:backgroundTint="@{theme.accent}"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tv_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="You don't have any data. See with a sample"
+                    android:textColor="@{theme.onPrimaryVariant}"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:id="@+id/iv_tips"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="@{theme.onPrimaryVariant}"
+                    app:srcCompat="@drawable/ic_chevron_right"
+                    tools:ignore="UseAppTint" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_analysis_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="160dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_score_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-20dp"
+                        android:gravity="bottom|center_horizontal"
+                        android:textColor="@{theme.onPrimary, default=`#fff`}"
+                        android:textSize="60sp"
+                        tools:text="80" />
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_score_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-16dp"
+                        android:gravity="center_horizontal|top"
+                        android:text="@string/score"
+                        android:textColor="@{theme.onPrimaryVariant, default=`#757a7f`}"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_info_data1"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:textColor="@{theme.onPrimary, default=`#fff`}"
+                        android:textSize="16sp"
+                        tools:text="23 m" />
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_info_title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="FELL ASLEEP"
+                        android:textColor="@{theme.onPrimaryVariant, default=`#757a7f`}"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_info_data2"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="24dp"
+                        android:textColor="@{theme.onPrimary, default=`#fff`}"
+                        android:textSize="16sp"
+                        tools:text="67%" />
+
+                    <TextView
+                        android:id="@+id/tv_anal_main_info_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="@string/sleep_efficiency"
+                        android:textColor="@{theme.onPrimaryVariant, default=`#757a7f`}"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fr_anal_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

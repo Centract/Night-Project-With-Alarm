@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.graphics.Color" />
+        <import type="androidx.datastore.preferences.core.PreferencesKeys" />
+        <variable name="viewModel" type="night.app.data.PreferenceViewModel" />
+        <variable name="theme" type="night.app.data.Theme" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="STATUS"
+                android:textColor="@{theme.onPrimaryVariant, default=`#61666a`}"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="48dp"
+                    android:text="Recent backup"
+                    android:textColor="@{theme.onSurface, default=`#000`}"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_sett_backup_last_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|end"
+                    android:text="@{viewModel.lastBackupDate}"
+                    android:textColor="@{theme.onSurface , default=`#000`}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="OPTION"
+                android:textColor="@{theme.onPrimaryVariant, default=`#61666a`}"
+                android:textSize="11sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/btn_sett_backup_opt_alarm"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="5dp"
+                android:checked="@={viewModel.isBackupAlarm}"
+                android:textColor="@{theme.onSurface, default=`#000`}"
+                android:thumbTintList="@{theme.switchThumbColors}"
+                android:trackTintList="@{theme.switchTrackColors}"
+                android:text="@string/alarm_list"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/btn_sett_backup_opt_sleep"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="5dp"
+                android:checked="@={viewModel.isBackupSleep}"
+                android:textColor="@{theme.onSurface, default=`#000`}"
+                android:thumbTintList="@{theme.switchThumbColors}"
+                android:trackTintList="@{theme.switchTrackColors}"
+                android:text="@string/sleep_data"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/btn_sett_backup_opt_dream"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="5dp"
+                android:checked="@={viewModel.isBackupDream}"
+                android:textColor="@{theme.onSurface, default=`#000`}"
+                android:thumbTintList="@{theme.switchThumbColors}"
+                android:trackTintList="@{theme.switchTrackColors}"
+                android:text="@string/dream_record"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/action"
+                android:textColor="@{theme.onPrimaryVariant, default=`#61666a`}"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_sett_backup_act_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginVertical="5dp"
+                android:backgroundTint="@{theme.accent, default=`#441E9F`}"
+                android:text="@string/backupCapital" />
+
+            <Button
+                android:id="@+id/btn_sett_backup_act_recovery"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginVertical="5dp"
+                android:backgroundTint="@{theme.accent, default=`#441E9F`}"
+                android:text="@string/recovery" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
